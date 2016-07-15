@@ -1,0 +1,155 @@
+
+/* Crear cajas articles de servicios */
+
+@mixin services-article($titles-color,$font-color){
+	text-align: center;
+	li{	
+		display: inline-block;
+		width: 24%;
+		margin-top: 140px;
+		&:first-child{
+			margin-left:0;
+		}
+		article{		
+			
+			display: inline-block;
+				div , h5 , p{
+					text-align: center;
+				}
+				div{
+					img{
+						@include transition-animation(1.5s);
+					&:hover{
+					@include animacion-icon-services;
+					}	
+				}
+				}
+				h5{
+					color: $titles-color;
+					font-weight: $subtitles-weight;
+					font-family: $sans;
+					text-transform: uppercase;
+					font-size: 12px;
+					padding: 25px 0;
+				}
+				p{
+					color: $font-color;
+				}
+			}	
+	}
+
+}
+
+/* Animacion iconos  articles de servicios */
+
+@mixin animacion-icon-services{
+	-webkit-transform: scale(1.20);
+	-o-transform: scale(1.20);
+	-moz-transform: scale(1.20);
+	-ms-transform: scale(1.20);
+	transform: scale(1.20);
+}
+
+
+/* Estilo a titulos y subtitulos */
+
+@mixin title-subtitle-style($titles-color){
+	h2{
+		color: $titles-color;
+		font-weight: $titles-weight;
+		text-align: center;
+		font-size: $titles-size;
+		font-family: $sans;
+		padding-top: 25px;
+	}
+	p{
+		text-align: center;
+		color: $font-color;
+		padding: 20px 0;
+	}	
+}
+
+
+/* Pricing tables */
+
+@mixin pricing-tables($sans,$subtitles-weight,$titles-color,$titles-weight){
+	text-align: center;	
+		li{
+			display: inline-block;
+			margin-left: 15px;
+			margin-top: 20px;
+			&:first-child{
+					margin-left:0;
+				}
+			article{
+				max-width: 165px;
+				padding: 45px 24px 24px 24px;
+				border: 2px double #efeeee;
+				background: white;
+				margin-left: 15px;
+				&:first-child{
+					margin-left:0;
+				}
+				h4{
+					text-align: center;
+					font-family: $sans;
+					font-weight: $subtitles-weight;
+					color: $titles-color;
+					text-transform: uppercase;
+					font-size: 12px;
+					margin-top: 35px;
+				}
+				h2{
+					text-align: center;
+					font-family: $sans;
+					color: $titles-color;
+					font-weight: $titles-weight;
+					font-size: 34px;
+				}
+				p{
+					padding: 8px 14px;
+					&:nth-child(5n){
+						margin-top: 70px;
+					}
+				}
+				a{
+					text-decoration: none;
+					padding: 12px 51px;
+					font-family: $sans;
+					font-weight: 600;
+					font-size: 10px;
+					text-transform: uppercase;
+					color: white;
+					background-color: $buttons-color;
+					display: inline-block;
+					margin: 28px 0 20px 0;
+					@include radius(4px);
+					&:hover{
+						background-color: $buttons-hover;
+					}
+				}
+			}
+		}
+	}
+
+
+
+/* Transition */
+
+@mixin transition-animation($tiempo){
+	-webkit-transition: $tiempo;
+	-ms-transition: $tiempo;
+	-moz-transition: $tiempo;
+	-o-transition: $tiempo;
+	transition: $tiempo;
+}
+
+/* Border radius */
+
+@mixin radius($radio){
+	-webkit-border-radius: $radio;
+	-ms-border-radius: $radio;
+	-moz-border-radius: $radio;
+	-o-border-radius: $radio;
+	border-left: $radio;
+}
